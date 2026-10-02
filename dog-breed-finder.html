@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breed Finder</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Breed Finder</h1>
+  <p>Search any recognized dog breed for its temperament, origin, and vitals — pulled live from TheDogAPI.</p>
+</header>
+
+<main>
+  <div class="searchRow">
+    <input type="text" id="searchInput" placeholder="Try “border collie” or “shiba”" autocomplete="off">
+    <button id="searchBtn">Search</button>
+    <div class="suggestions" id="suggestions" style="display:none;"></div>
+  </div>
+
+  <div class="keyRow">
+    <details id="keyDetails">
+      <summary>API key</summary>
+      <div class="keyInputRow">
+        <input type="password" id="apiKeyInput" placeholder="Paste your TheDogAPI key">
+        <button id="saveKeyBtn">Save</button>
+      </div>
+      <div style="margin-top:6px;">Free at <a href="https://thedogapi.com" target="_blank" rel="noopener">thedogapi.com</a>. Kept only in this browser.</div>
+    </details>
+  </div>
+
+  <div class="status" id="status"></div>
+  <div id="result"></div>
+
+  <section class="quizSection">
+    <button type="button" id="quizToggle" class="quizToggle">Not sure where to start? Take the quiz →</button>
+    <div id="quizPanel" class="quizPanel" hidden>
+      <h2>Which breed fits your life?</h2>
+      <form id="quizForm">
+        <fieldset>
+          <legend>Daily exercise you can offer</legend>
+          <label><input type="radio" name="energy" value="low" checked> Low — short walks</label>
+          <label><input type="radio" name="energy" value="moderate"> Moderate — daily walks and play</label>
+          <label><input type="radio" name="energy" value="high"> High — runs, hikes, sports</label>
+        </fieldset>
+        <fieldset>
+          <legend>Living space</legend>
+          <label><input type="radio" name="space" value="apartment" checked> Apartment</label>
+          <label><input type="radio" name="space" value="house_small"> House, small yard</label>
+          <label><input type="radio" name="space" value="house_large"> House, large yard</label>
+        </fieldset>
+        <fieldset>
+          <legend>Young kids or other pets at home?</legend>
+          <label><input type="radio" name="family" value="yes" checked> Yes</label>
+          <label><input type="radio" name="family" value="no"> No</label>
+        </fieldset>
+        <button type="submit">Find my matches</button>
+      </form>
+      <div class="status" id="quizStatus"></div>
+      <div id="quizResults" class="quizResults"></div>
+    </div>
+  </section>
+</main>
+
+<footer>Data from TheDogAPI. Not affiliated with TheDogAPI or thedogapi.com.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
